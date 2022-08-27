@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Lexend:regular);
+@import url(https://fonts.googleapis.com/css?family=Big+Shoulders+Display:700);
+
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: "Lexend";
+   font-size: 15px;
+   color: hsla(0, 0%, 100%, 0.75);
+   background-color: #80add7;
+}
+button {
+   font-family: "Lexend";
+}
+
+.container {
+   min-height: 100vh;
+   display: grid;
+   grid-template: 1fr minmax(auto, 450px) 1fr / 1fr minmax(auto, 800px) 1fr;
+   @media (max-width:765px){
+      grid-template: 1fr minmax(450px, auto) 1fr / 1fr minmax(auto, 800px) 1fr;
+   }
+}
+.cards {
+   margin: 20px;
+   grid-column: 2 / 3;
+   grid-row: 2 / 3;
+   display: grid;
+   grid-template: 1fr / repeat(3, 1fr);
+   border-radius: 10px;
+   overflow: hidden;
+   @media (max-width:765px){
+      grid-template: repeat(3, 1fr) / 1fr;
+   }
+   // .cards__item
+   &__item {
+      padding: 30px;
+      display: grid;
+      grid-template-rows: 80px auto 50px;
+      @media (max-width:765px){
+         row-gap: 10px;
+      }
+   }
+   // .cards__logo
+   &__logo {
+   }
+   // .cards__info
+   &__info {
+   }
+
+   // .cards__title
+   &__title {
+      font-family: "Big Shoulders Display";
+      text-transform: uppercase;
+      font-size: 45px;
+      color: hsl(0, 0%, 95%);
+      margin-bottom: 20px;
+   }
+   // .cards__descr
+   &__descr {
+      line-height: 1.5;
+   }
+   // .cards__btn
+   &__btn {
+      cursor: pointer;
+      border-radius: 25px;
+      padding: 0 20px;
+      border: 2px solid transparent;
+      background-color: hsl(0, 0%, 95%);
+      justify-self: start;
+      transition: all ease 0.2s;
+      span {
+         color: transparent;
+      }
+
+      &:hover {
+         border: 2px solid hsl(0, 0%, 95%);
+         background-color: transparent;
+         color: hsl(0, 0%, 95%);
+      }
+   }
+}
+.suv {
+   background-color: hsl(184, 100%, 22%);
+   button {
+      color: hsl(184, 100%, 22%);
+   }
+}
+.lux {
+   background-color: hsl(179, 100%, 13%);
+   button {
+      color: hsl(179, 100%, 13%);
+   }
+}
+.sedan {
+   background-color: hsl(31, 77%, 52%);
+   button {
+      color: hsl(31, 77%, 52%);
+   }
+}

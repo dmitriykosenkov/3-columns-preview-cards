@@ -1,0 +1,136 @@
+@import url(https://fonts.googleapis.com/css?family=Lexend:regular);
+@import url(https://fonts.googleapis.com/css?family=Big+Shoulders+Display:700);
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Lexend";
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  background-color: #80add7;
+}
+
+button {
+  font-family: "Lexend";
+}
+
+.container {
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr minmax(auto, 450px) 1fr;
+  -ms-grid-columns: 1fr minmax(auto, 800px) 1fr;
+      grid-template: 1fr minmax(auto, 450px) 1fr/1fr minmax(auto, 800px) 1fr;
+}
+
+@media (max-width: 765px) {
+  .container {
+    -ms-grid-rows: 1fr minmax(450px, auto) 1fr;
+    -ms-grid-columns: 1fr minmax(auto, 800px) 1fr;
+        grid-template: 1fr minmax(450px, auto) 1fr/1fr minmax(auto, 800px) 1fr;
+  }
+}
+
+.cards {
+  margin: 20px;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr;
+  -ms-grid-columns: (1fr)[3];
+      grid-template: 1fr/repeat(3, 1fr);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media (max-width: 765px) {
+  .cards {
+    -ms-grid-rows: (1fr)[3];
+    -ms-grid-columns: 1fr;
+        grid-template: repeat(3, 1fr)/1fr;
+  }
+}
+
+.cards__item {
+  padding: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 80px auto 50px;
+      grid-template-rows: 80px auto 50px;
+}
+
+@media (max-width: 765px) {
+  .cards__item {
+    row-gap: 10px;
+  }
+}
+
+.cards__title {
+  font-family: "Big Shoulders Display";
+  text-transform: uppercase;
+  font-size: 45px;
+  color: #f2f2f2;
+  margin-bottom: 20px;
+}
+
+.cards__descr {
+  line-height: 1.5;
+}
+
+.cards__btn {
+  cursor: pointer;
+  border-radius: 25px;
+  padding: 0 20px;
+  border: 2px solid transparent;
+  background-color: #f2f2f2;
+  -ms-grid-column-align: start;
+      justify-self: start;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+
+.cards__btn span {
+  color: transparent;
+}
+
+.cards__btn:hover {
+  border: 2px solid #f2f2f2;
+  background-color: transparent;
+  color: #f2f2f2;
+}
+
+.suv {
+  background-color: #006970;
+}
+
+.suv button {
+  color: #006970;
+}
+
+.lux {
+  background-color: #004241;
+}
+
+.lux button {
+  color: #004241;
+}
+
+.sedan {
+  background-color: #e38826;
+}
+
+.sedan button {
+  color: #e38826;
+}
